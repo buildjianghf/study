@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd"
+       default-autowire="byName">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.study.common"/>
+    <context:component-scan base-package="com.study.dao"/>
+    <context:component-scan base-package="com.study.service"/>
+
+    <context:property-placeholder
+            location="classpath:prop/jdbc.properties,
+            "/>
+
+    <import resource="conf/spring-config-datasource.xml"/>
+
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+    <context:component-scan base-package="com.study.**">
+        <context:include-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/>
+    </context:component-scan>
+
+    <!-- 声明线程池 -->
+    <bean id="taskExecutor"
+          class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor"
+          p:corePoolSize="10" p:maxPoolSize="100"
+          p:queueCapacity="20000" p:keepAliveSeconds="60" />
+
+    <!-- 支持 @Async 注解 -->
+    <task:annotation-driven executor="taskExecutor"/>
+</beans>
