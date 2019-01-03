@@ -15,10 +15,10 @@
  * </p>
  */
 
-package com.study.dao.mapper;
+package com.study.dao.common;
 
 
-import com.study.domain.OrderItem;
+import com.study.domain.Order;
 
-public interface OrderItemRepository extends CommonRepository<OrderItem> {
+public interface OrderRepository extends CommonRepository<Order> {
 }

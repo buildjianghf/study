@@ -13,7 +13,7 @@
                         http://shardingsphere.io/schema/shardingsphere/sharding 
                         http://shardingsphere.io/schema/shardingsphere/sharding/sharding.xsd">
     <!--<import resource="classpath:META-INF/shardingTransaction.xml"/>-->
-    <!--<context:component-scan base-package="io.shardingsphere.example.repository.mybatis" />-->
+    <!--<context:component-scan base-package="com.study.dao" />-->
     
     <bean id="demo_ds" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>

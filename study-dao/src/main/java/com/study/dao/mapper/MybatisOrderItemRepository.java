@@ -17,6 +17,7 @@
 
 package com.study.dao.mapper;
 
+import com.study.dao.common.OrderItemRepository;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

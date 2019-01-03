@@ -18,8 +18,8 @@
 package com.study.service;
 
 
-import com.study.dao.mapper.OrderItemRepository;
-import com.study.dao.mapper.OrderRepository;
+import com.study.dao.common.OrderItemRepository;
+import com.study.dao.common.OrderRepository;
 import com.study.domain.Order;
 import com.study.domain.OrderItem;
 import org.springframework.transaction.annotation.Transactional;
@@ -49,7 +49,7 @@ public abstract class CommonServiceImpl implements CommonService {
         System.out.println("-------------- Process Success Begin ---------------");
         List<Long> orderIds = insertData();
         printData(isRangeSharding);
-        deleteData(orderIds);
+//        deleteData(orderIds);
         printData(isRangeSharding);
         System.out.println("-------------- Process Success Finish --------------");
     }

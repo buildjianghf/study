@@ -13,6 +13,7 @@
        default-autowire="byName">
 
     <context:annotation-config/>
+    <context:component-scan base-package="com.study.domain"/>
     <context:component-scan base-package="com.study.common"/>
     <context:component-scan base-package="com.study.dao"/>
     <context:component-scan base-package="com.study.service"/>
@@ -21,7 +22,8 @@
             location="classpath:prop/jdbc.properties,
             "/>
 
-    <import resource="conf/application-sharding-tables-range.xml"/>
+    <import resource="conf/application-sharding-tables-precise.xml"/>
+    <!--<import resource="conf/application-sharding-tables-range.xml"/>-->
 
     <aop:aspectj-autoproxy proxy-target-class="true" />
     <context:component-scan base-package="com.study.**">

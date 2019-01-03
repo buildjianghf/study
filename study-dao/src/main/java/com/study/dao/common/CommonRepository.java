@@ -15,7 +15,7 @@
  * </p>
  */
 
-package com.study.dao.mapper;
+package com.study.dao.common;
 
 import java.util.List;
 

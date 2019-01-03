@@ -18,8 +18,8 @@
 package com.study.service;
 
 
-import com.study.dao.mapper.OrderItemRepository;
-import com.study.dao.mapper.OrderRepository;
+import com.study.dao.common.OrderItemRepository;
+import com.study.dao.common.OrderRepository;
 import com.study.domain.Order;
 import com.study.domain.OrderItem;
 import org.springframework.stereotype.Service;

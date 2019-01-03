@@ -34,4 +34,9 @@
     <select id="selectRange" resultMap="baseResultMap">
         SELECT * FROM t_order WHERE order_id BETWEEN 200000000000000000 AND 400000000000000000
     </select>
+
+    <select id="selectRangeByStatus" resultMap="baseResultMap">
+        SELECT * FROM t_order WHERE status BETWEEN 200 AND 300
+    </select>
+
 </mapper>

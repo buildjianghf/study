@@ -17,8 +17,14 @@
 
 package com.study.dao.mapper;
 
+import com.study.dao.common.OrderRepository;
+import com.study.domain.Order;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 @Mapper
 public interface MybatisOrderRepository extends OrderRepository {
+
+    List<Order> selectRangeByStatus();
 }
